@@ -7,17 +7,19 @@ import kpPic from './assets/images/ketanfinal.jpeg';
 import { FaGem, FaSmile, FaBolt, FaHeart, FaStar, FaTooth } from 'react-icons/fa';
 
 export default function SmyluxeDentalStudio() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+    appointmentDate: '',
+  });
+
   const [isSent, setIsSent] = useState(false);
 
-  // Replace these with your EmailJS env variables
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
-  console.log("vars", SERVICE_ID);
-  console.log("vars2", TEMPLATE_ID);
-  console.log("vars3", USER_ID);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -28,24 +30,21 @@ export default function SmyluxeDentalStudio() {
       .send(SERVICE_ID, TEMPLATE_ID, formData, USER_ID)
       .then(() => {
         setIsSent(true);
-        setFormData({ name: '', email: '', message: '' });
+        setFormData({ name: '', email: '', message: '', appointmentDate: '' });
       })
       .catch((err) => console.error('Email send error:', err));
   };
 
-  // Updated Colors and Fonts with more golden gradients
-  const GOLD_PRIMARY = '#BFA34A'; // Deeper gold for main headings and accents
-  const GOLD_ACCENT = '#d4af37'; // Brighter gold for buttons, links
-  const GOLD_LIGHT = '#f7d56f'; // Light golden for gradients and highlights
-  const OFF_WHITE_BG = '#fff9e6'; // Warm off-white with a subtle golden tint
-  const TEXT_GRAY_PRIMARY = '#3a2e0f'; // Darker warm gray for text with golden warmth
-  const TEXT_GRAY_SECONDARY = '#5a4b1a'; // Softer secondary text in warm tone
+  const GOLD_PRIMARY = '#BFA34A';
+  const GOLD_ACCENT = '#d4af37';
+  const GOLD_LIGHT = '#f7d56f';
+  const OFF_WHITE_BG = '#fff9e6';
+  const TEXT_GRAY_PRIMARY = '#3a2e0f';
+  const TEXT_GRAY_SECONDARY = '#5a4b1a';
 
-  // Gradient backgrounds updated to richer golden gradients
   const GOLD_GRADIENT = `linear-gradient(145deg, ${GOLD_ACCENT}, ${GOLD_LIGHT})`;
   const BUTTON_STYLE = { background: GOLD_GRADIENT, boxShadow: `0 4px 15px ${GOLD_LIGHT}` };
 
-  // Services with icons and refined descriptions
   const services = [
     {
       title: 'Hollywood Whitening',
@@ -79,7 +78,6 @@ export default function SmyluxeDentalStudio() {
     },
   ];
 
-  // Doctors with free, professional-looking Unsplash images (higher resolution where possible)
   const doctors = [
     {
       name: 'Dr. Ketan Patil',
@@ -100,8 +98,7 @@ export default function SmyluxeDentalStudio() {
         rel="stylesheet"
       />
 
-      {/* Header */}
-      <header className="py-5 px-4 shadow-lg sticky top-0 z-50 bg-yellow-50 border-b border-yellow-300/70">
+<header className="py-5 px-4 shadow-lg sticky top-0 z-50 bg-yellow-50 border-b border-yellow-300/70">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <a href="#" className="text-3xl lg:text-4xl font-playfair font-extrabold tracking-wide" style={{ color: GOLD_PRIMARY }}>
             Smyluxe Dental Studio
@@ -312,6 +309,21 @@ export default function SmyluxeDentalStudio() {
                   onChange={handleChange}
                   className="w-full border border-yellow-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   placeholder="your.email@example.com"
+                  style={{ color: TEXT_GRAY_PRIMARY }}
+                />
+              </div>
+              <div>
+                <label htmlFor="appointmentDate" className="block text-lg font-semibold mb-2" style={{ color: GOLD_ACCENT }}>
+                  Preferred Appointment Date
+                </label>
+                <input
+                  type="date"
+                  id="appointmentDate"
+                  name="appointmentDate"
+                  required
+                  value={formData.appointmentDate}
+                  onChange={handleChange}
+                  className="w-full border border-yellow-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-yellow-400"
                   style={{ color: TEXT_GRAY_PRIMARY }}
                 />
               </div>
