@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import testImg from './assets/images/test_img.jpg';
+import kpPic from './assets/images/ketanpic.jpg';
+import cpPic from './assets/images/Chayapic.jpg';
 import { FaGem, FaSmile, FaBolt, FaHeart, FaStar, FaTooth } from 'react-icons/fa';
 
 export default function SmyluxeDentalStudio() {
@@ -79,19 +81,14 @@ export default function SmyluxeDentalStudio() {
   // Doctors with free, professional-looking Unsplash images (higher resolution where possible)
   const doctors = [
     {
-      name: 'Dr. Asha Mehta',
-      role: 'Cosmetic Specialist',
-      img: 'https://images.unsplash.com/photo-1579766938222-1d5821c4303d?ixlib=rb-4.0.3&ixid=M3w5dHx8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      name: 'Dr. Ketan Patil',
+      role: 'BDS, MUHS',
+      img:{kpPic},
     },
     {
-      name: 'Dr. Raj Patel',
-      role: 'Implant Surgeon',
-      img: 'https://images.unsplash.com/photo-1559135061-ec86b402830f?ixlib=rb-4.0.3&ixid=M3w5dHx8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      name: 'Dr. Neha Singh',
-      role: 'Smile Designer',
-      img: 'https://images.unsplash.com/photo-1582266657195-23631f47b2c0?ixlib=rb-4.0.3&ixid=M3w5dHx8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
+      name: 'Dr. Chhaya Patil',
+      role: 'MDS, Implant Surgeon',
+      img: {cpPic},
     },
   ];
 
