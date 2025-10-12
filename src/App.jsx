@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import testImg from './assets/images/test_img.jpg';
-import kpPic from './assets/images/ketanpic.jpg';
-import cpPic from './assets/images/Chayapic.jpg';
+
+import cpPic from './assets/images/Chayapic.jpeg';
+import kpPic from './assets/images/ketanpic2.jpeg';
 import { FaGem, FaSmile, FaBolt, FaHeart, FaStar, FaTooth } from 'react-icons/fa';
 
 export default function SmyluxeDentalStudio() {
@@ -83,12 +84,12 @@ export default function SmyluxeDentalStudio() {
     {
       name: 'Dr. Ketan Patil',
       role: 'BDS, MUHS',
-      img:{kpPic},
+      img:kpPic,
     },
     {
       name: 'Dr. Chhaya Patil',
-      role: 'MDS, Implant Surgeon',
-      img: {cpPic},
+      role:  <>MDS, MUHS<br />Implant Surgeon</>,
+      img:cpPic,
     },
   ];
 
