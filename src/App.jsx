@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import testImg from './assets/images/test_img.jpg';
 
-import cpPic from './assets/images/Chayapic.jpeg';
-import kpPic from './assets/images/ketanpic2.jpeg';
+import cpPic from './assets/images/chhayapic.jpeg';
+import kpPic from './assets/images/ketanfinal.jpeg';
 import { FaGem, FaSmile, FaBolt, FaHeart, FaStar, FaTooth } from 'react-icons/fa';
 
 export default function SmyluxeDentalStudio() {
@@ -15,9 +15,9 @@ export default function SmyluxeDentalStudio() {
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
 
-  console.log("vars",SERVICE_ID);
-  console.log("vars2",TEMPLATE_ID);
-  console.log("vars3",USER_ID);
+  console.log("vars", SERVICE_ID);
+  console.log("vars2", TEMPLATE_ID);
+  console.log("vars3", USER_ID);
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -40,7 +40,7 @@ export default function SmyluxeDentalStudio() {
   const OFF_WHITE_BG = '#fff9e6'; // Warm off-white with a subtle golden tint
   const TEXT_GRAY_PRIMARY = '#3a2e0f'; // Darker warm gray for text with golden warmth
   const TEXT_GRAY_SECONDARY = '#5a4b1a'; // Softer secondary text in warm tone
-  
+
   // Gradient backgrounds updated to richer golden gradients
   const GOLD_GRADIENT = `linear-gradient(145deg, ${GOLD_ACCENT}, ${GOLD_LIGHT})`;
   const BUTTON_STYLE = { background: GOLD_GRADIENT, boxShadow: `0 4px 15px ${GOLD_LIGHT}` };
@@ -84,12 +84,12 @@ export default function SmyluxeDentalStudio() {
     {
       name: 'Dr. Ketan Patil',
       role: 'BDS, MUHS',
-      img:kpPic,
+      img: kpPic,
     },
     {
       name: 'Dr. Chhaya Patil',
-      role:  <>MDS, MUHS<br />Implant Surgeon</>,
-      img:cpPic,
+      role: <>MDS, MUHS<br />Implant Surgeon</>,
+      img: cpPic,
     },
   ];
 
@@ -241,22 +241,22 @@ export default function SmyluxeDentalStudio() {
       </section>
 
       {/* Doctors */}
-      <section id="doctors" className="py-28 bg-yellow-50 border-t border-b border-yellow-300">
+      <section id="doctors" className="py-28 bg-yellow-50 border-t border-b border-yellow-300" >
         <div className="max-w-7xl mx-auto px-6 text-center">
           <h3 className="text-5xl font-playfair font-extrabold mb-16" style={{ color: GOLD_PRIMARY }}>
             Meet Our Expert Team
           </h3>
-          <div className="grid gap-12 md:grid-cols-3">
+          <div className="grid gap-12 md:grid-cols-2">
             {doctors.map(({ name, role, img }, i) => (
               <div
                 key={i}
-                className="p-8 rounded-3xl bg-white shadow-xl hover:shadow-2xl transition duration-300 cursor-pointer group relative overflow-hidden"
+                className="p-8 rounded-3xl bg-white shadow-xl hover:shadow-2xl transition duration-300 cursor-pointer group relative overflow-hidden max-w-lg mx-auto"
               >
                 <div className="overflow-hidden rounded-2xl mb-6">
                   <img
                     src={img}
                     alt={`Portrait of ${name}, ${role}`}
-                    className="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-96 md:h-80 object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                 </div>
@@ -267,6 +267,7 @@ export default function SmyluxeDentalStudio() {
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
