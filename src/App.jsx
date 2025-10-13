@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import testImg from './assets/images/test_img.jpg';
 
-import cpPic from './assets/images/chhayapic.jpeg';
-import kpPic from './assets/images/ketanfinal.jpeg';
+import cpPic from './assets/images/ChhayaPatil.jpeg';
+import kpPic from './assets/images/KetanPatil.jpeg';
 import { FaGem, FaSmile, FaBolt, FaHeart, FaStar, FaTooth } from 'react-icons/fa';
 
 export default function SmyluxeDentalStudio() {
