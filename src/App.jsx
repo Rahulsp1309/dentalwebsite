@@ -28,7 +28,7 @@ export default function SmyluxeDentalStudio() {
         // Automatically hide the popup after 6 seconds
         const timer = setTimeout(() => {
             setShowWelcomePopup(false);
-        }, 2000); 
+        }, 3200); 
 
         return () => clearTimeout(timer);
     }, []);
